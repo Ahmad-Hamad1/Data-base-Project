@@ -1,0 +1,123 @@
+<%- include('partials/header.ejs') %>
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div class="banner_content d-md-flex justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+              <h2>Shop Category</h2>
+            </div>
+            <div class="page_link">
+              <a href="/">Home</a>
+              <a href="/shop">Shop</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Category Product Area =================-->
+    <% if(products.length > 0){ %>
+      <section class="cat_product_area section_gap">
+        <div class="container">
+          <div class="row flex-row-reverse">
+            <div class="col-lg-9">          
+              <div class="latest_product_inner">
+                <div class="row">
+                  <% if(products) { %>
+                    <% products.forEach(product => { %>
+                      <div class="col-lg-4 col-md-6">
+                        <div class="single-product">
+                          <div class="product-img" style="height: 300px;">
+                            <img
+                              class="card-img"
+                              src="/<%= product.image %>"
+                              alt="<%= product.name %>"
+                              style="height: 300px;"
+                            />
+                            <div class="p_icon">
+                              <a href="/product/<%= product.productId %>">
+                                <i class="ti-eye"></i>
+                              </a>
+                              <form style="all:unset;" action="/cart/<%= product.productId %>" method="POST">
+                                <input type="hidden" name="productQty" value="<%= product.qty %>">
+                                <input type="hidden" name="qty" value="1"/>
+                                <button style="all: unset; cursor: pointer;">
+                                  <a style="cursor: pointer;"><i class="ti-shopping-cart"></i></a>
+                                </button>
+                              </form>
+                              <% if(user && user.admin){ %>
+                                <a href="/edit-product/<%= product.productId %>" style="margin-left: 25px;">
+                                  <i class="ti-pencil"></i>
+                                </a>
+                              <% } %>
+                            </div>
+                          </div>
+                          <div class="product-btm">
+                            <a href="/products/<%= product.id %>" class="d-block">
+                              <h4><%= product.name.length > 20 ? product.name.substring(0, 21) + '....' : product.name %></h4>
+                            </a>
+                            <div class="mt-3">
+                              <span class="mr-4">$<%= product.price %></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% }); %>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+            <% } else { %>
+              <div class="alert alert-info" role="alert" style="text-align: center; font-weight: bold;">
+                No Products Available
+              </div>
+            <% } %>
+            <div class="col-lg-3">
+              <div class="left_sidebar_area">
+                <aside class="left_widgets p_filter_widgets">
+                  <div class="l_w_title">
+                    <h3>Browse Categories</h3>
+                  </div>
+                  <div class="widgets_inner">
+                    <ul class="list">
+                      <li class="<%= !locals.cat ? 'active' : '' %>">
+                        <a href="/shop">All Categories</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C1' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C1">Desktop</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C2' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C2">Laptop</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C3' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C3">Hardware</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C4' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C4">Printer</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C5' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C5">Toner</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C6' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C6">Accessories</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C7' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C7">Charger</a>
+                      </li>
+                      <li class="<%= locals.cat === 'C8' ? 'active' : '' %>">
+                        <a href="/shop/?cat=C8">Bags & Covers</a>
+                      </li>
+                    </ul>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  <!--================End Category Product Area =================-->
+
+<%- include('partials/footer.ejs') %>

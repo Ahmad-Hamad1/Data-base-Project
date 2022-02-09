@@ -1,0 +1,184 @@
+<%- include('partials/header.ejs') %>
+
+  <% if(locals.product){ %>
+      <!--================Home Banner Area =================-->
+      <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+          <div class="container">
+            <div
+              class="banner_content d-md-flex justify-content-between align-items-center"
+            >
+              <div class="mb-3 mb-md-0">
+                <h2><%= product.name %></h2>
+              </div>
+              <div class="page_link">
+                <a href="/">Home</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--================End Home Banner Area =================-->
+
+      <!--================Single Product Area =================-->
+      <div class="product_image_area">
+        <div class="container">
+          <div class="row s_product_inner">
+            <div class="col-lg-6">
+              <div class="s_product_img">
+                <div
+                  id="carouselExampleIndicators"
+                  class="carousel slide"
+                  data-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        class="d-block w-100"
+                        src="/<%= product.image %>"
+                        alt="<%= product.name %>"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+              <div class="s_product_text">
+                <h3><%= product.name %></h3>
+                <h2>$<%= product.price %></h2>
+                <ul class="list">
+                  <li>
+                    <a class="active" href="#">
+                      <span>Category</span> : <%= product.category %></a>
+                  </li>
+                  <li>
+                    <a class="active" href="#">
+                      <span>Color</span> : <%= product.color %></a>
+                  </li>
+                  <li>
+                    <a href="#"> <span>Availibility</span> : <%= product.qty > 0 ? 'In Stock' : 'Sold Out' %> </a>
+                  </li>
+                </ul>
+                <div class="card_area">
+                  <form action="/cart/<%= product.productId %>" method="POST">
+                    <div class="product_count">
+                      <label for="qty">Quantity:</label>
+                      <input
+                        type="number"
+                        name="qty"
+                        value="1"
+                        min="1"
+                        max="<%= product.qty %>"
+                        title="Quantity:"
+                        class="input-text qty"
+                      />
+                    </div>
+                    <input type="hidden" name="productQty" value="<%= product.qty %>">
+                    <button type="submit" class="main_btn" style="display: block;">Add to Cart</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--================End Single Product Area =================-->
+
+      <!--================Product Description Area =================-->
+      <section class="product_description_area">
+        <div class="container">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="home-tab"
+                data-toggle="tab"
+                href="#home"
+                role="tab"
+                aria-controls="home"
+                aria-selected="true"
+                >Description</a
+              >
+            </li>
+            <% if(product.specificationsId){ %> 
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  id="profile-tab"
+                  data-toggle="tab"
+                  href="#profile"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="false"
+                  >Specifications</a
+                >
+              </li>
+            <% } %>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <p><%= product.description %></p>
+            </div>
+            <% if(product.specificationsId){ %> 
+              <div
+                class="tab-pane fade"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <h5>CPU</h5>
+                        </td>
+                        <td>
+                          <h5><%= product.CPU %></h5>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <h5>GPU</h5>
+                        </td>
+                        <td>
+                          <h5><%= product.GPU %></h5>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <h5>RAM</h5>
+                        </td>
+                        <td>
+                          <h5><%= product.RAM %></h5>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <h5>Hard Disk</h5>
+                        </td>
+                        <td>
+                          <h5><%= product.HardDisk %></h5>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </section>
+      <!--================End Product Description Area =================-->
+  <% }else{ %>
+    <div class="alert alert-info" role="alert" style="text-align: center; font-weight: bold; margin-bottom: 0;">
+      This Product Is Not Available.
+    </div>
+  <% } %> 
+<%- include('partials/footer.ejs') %>

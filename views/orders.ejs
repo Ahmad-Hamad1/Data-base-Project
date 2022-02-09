@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Orders</title>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/orders.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/js/jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 3.3.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    <!-- Header Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/banker/icomoon/style.css">
+
+  <link rel="stylesheet" href="/CSS/banker/bootstrap.min.css">
+  <link rel="stylesheet" href="/CSS/banker/jquery-ui.css">
+  <link rel="stylesheet" href="/CSS/banker/owl.carousel.min.css">
+  <link rel="stylesheet" href="/CSS/banker/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/CSS/banker/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="/CSS/banker/jquery.fancybox.min.css">
+
+  <link rel="stylesheet" href="/CSS/banker/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="/fonts/banker/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="/CSS/banker/aos.css">
+
+  <link rel="stylesheet" href="/CSS/banker/style.css">
+
+
+
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="stylesheet" href="/vendors/linericon/style.css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/themify-icons.css" />
+  <link rel="stylesheet" href="/css/flaticon.css" />
+  <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="/vendors/lightbox/simpleLightbox.css" />
+  <link rel="stylesheet" href="/vendors/nice-select/css/nice-select.css" />
+  <link rel="stylesheet" href="/vendors/animate-css/animate.css" />
+  <link rel="stylesheet" href="/vendors/jquery-ui/jquery-ui.css" />
+  <!-- main css -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html"
+  }</script>
+
+    <meta property="og:title" content="Page 11">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#4470f4">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+  </head>
+  
+  <body class="u-body">
+    <header class="header_area">
+      <div class="top_menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="float-left">
+                <p>Telephone: 2970008</p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="float-right">
+                <ul class="right_side">
+                  <li>
+                    <a href="/contact">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main_menu">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="/">
+              <img src="/img/logo.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
+              <div class="row w-100 mr-0">
+                <div class="col-lg-7 pr-0">
+                  <ul class="nav navbar-nav center_nav pull-right">
+                    <li class="nav-item <%= title === '/' ? 'active' : '' %>">
+                      <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item submenu dropdown <%= title === 'shop' ? 'active' : '' %>">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false">Shop</a>
+                      <ul class="dropdown-menu">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/shop">Shop Category</a>
+                        </li>
+                        <% if(user){ %>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/checkout">Product Checkout</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/cart">Shopping Cart</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/orders">Orders</a>
+                          </li>
+                        <% } %>
+                      </ul>
+                    </li>
+                    <% if(user && user.admin){ %>
+                      <li class="nav-item submenu dropdown <%= title === 'Edit Product' || title === 'Add Product' ? 'active' : '' %>">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                          aria-expanded="false">Admin</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item">
+                            <a class="nav-link" href="/add-product">Add Product</a>
+                          </li>
+                        </ul>
+                      </li>
+                    <% } %>
+                    <% if(!user || (user && !user.admin)){ %>
+                      <li class="nav-item <%= title === 'contact' ? 'active' : '' %>">
+                        <a class="nav-link" href="/contact">Contact</a>
+                      </li>
+                    <% } %>
+                  </ul>
+                </div>
+  
+                <div class="col-lg-5 pr-0">
+                  <ul class="nav navbar-nav navbar-right right_nav pull-right">
+                    <% if(user){ %>
+                      <li class="nav-item">
+                        <a href="/cart" class="icons">
+                          <i class="ti-shopping-cart"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/logout" class="icons">
+                          <img src="/img/signout.png" alt="Log Out">
+                        </a>
+                      </li>
+                    <% } %>
+                    <% if(!user){ %>
+                      <li class="nav-item">
+                        <a href="/signin" class="icons">
+                          <i class="ti-user" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/signup" class="icons">
+                          <i class="ti-plus" aria-hidden="true"></i>
+                        </a>
+                      </li>
+                    <% } %> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert" style="text-align: center;">
+        <%= error %>
+      </div>
+    <% } else if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert" style="text-align: center;">
+        <%= success %>
+      </div>
+    <% } %>
+    <% if (orders.length > 0){ %>
+      <section class="u-align-center u-clearfix u-image u-section-1" id="carousel_9189">
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-table u-table-responsive u-table-1">
+            <table class="u-table-entity u-table-entity-1">
+              <colgroup>
+                <col width="18.7%">
+                <col width="15%">
+                <col width="20.4%">
+                <col width="16.6%">
+                <col width="12.3%">
+                <col width="17%">
+              </colgroup>
+              <thead class="u-black u-table-header u-table-header-1">
+                <tr style="height: 26px;">
+                  <th class="u-table-cell">Date </th>
+                  <th class="u-table-cell"> Order ID </th>
+                  <th class="u-table-cell">Name</th>
+                  <th class="u-table-cell">Phone Number<br>
+                  </th>
+                  <th class="u-table-cell">Price</th>
+                  <th class="u-table-cell">Details</th>
+                </tr>
+              </thead>
+              <tbody class="u-table-alt-palette-1-light-3 u-table-body">
+                <% orders.forEach(order => { %>
+                  <tr style="height: 46px;">
+                    <td class="u-table-cell"><%= order.createdAt.toDateString() %></td>
+                    <td class="u-table-cell"><%= order.orderId %></td>
+                    <td class="u-table-cell"><%= order.firstName + ' ' + order.lastName %></td>
+                    <td class="u-table-cell">
+                      <%= order.phoneNumber %>
+                    </td>
+                    <td class="u-table-cell">$<%= order.totalPrice %></td>
+                    <td class="u-table-cell">
+                      <a href="/orders/<%= order.orderId %>">click here<br>
+                      </a>
+                    </td>
+                  </tr>
+                <% }) %>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    <% } else{ %>
+      <div class="alert alert-info" role="alert" style="text-align: center; font-weight: bold;">
+        No Orders Available
+      </div>
+    <% } %>
+  
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-5">
+                <h2 class="footer-heading mb-4">About Us</h2>
+                <p>ITECH for Computer and Information Technology was established in 2006, in the city center of Ramallah, by the engineer Hammad Al-Khawaja.
+  
+                  And it was one of the first companies in the field of importing computer and mobile parts, supplies and accessories, and a major distributor for many computer companies, wholesalers and retailers.
+                  
+                  Our relentless endeavor to provide everything necessary for wholesalers and retailers is what made us at the forefront in this sector</p>
+              </div>
+              <div class="col-md-3 ml-auto">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#about-section" class="smoothscroll">Terms</a></li>
+                  <li><a href="#about-section" class="smoothscroll">Policy</a></li>
+                  <li><a href="#about-section" class="smoothscroll">About Us</a></li>
+                  <li><a href="#services-section" class="smoothscroll">Services</a></li>
+                  <li><a href="#testimonials-section" class="smoothscroll">Testimonials</a></li>
+                  <li><a href="/contact" class="smoothscroll">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 footer-social">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="https://www.facebook.com/ITechcomputer1" class="pl-0 pr-3" target="blank"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p class="copyright"><small>Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved </small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div> 
+  <script src="/js/banker/jquery-3.3.1.min.js"></script>
+  <script src="/js/banker/jquery-ui.js"></script>
+  <script src="/js/banker/popper.min.js"></script>
+  <script src="/js/banker/bootstrap.min.js"></script>
+  <script src="/js/banker/owl.carousel.min.js"></script>
+  <script src="/js/banker/jquery.countdown.min.js"></script>
+  <script src="/js/banker/jquery.easing.1.3.js"></script>
+  <script src="/js/banker/aos.js"></script>
+  <script src="/js/banker/jquery.fancybox.min.js"></script>
+  <script src="/js/banker/jquery.sticky.js"></script>
+  <script src="/js/banker/isotope.pkgd.min.js"></script>
+  
+  
+  <script src="/js/banker/main.js"></script>
+  
+  
+  <script src="/js/jquery-3.2.1.min.js"></script>
+  <script src="/js/popper.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/stellar.js"></script>
+  <script src="/vendors/lightbox/simpleLightbox.min.js"></script>
+  <script src="/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+  <script src="/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+  <script src="/vendors/isotope/isotope-min.js"></script>
+  <script src="/vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/js/jquery.ajaxchimp.min.js"></script>
+  <script src="/vendors/counter-up/jquery.waypoints.min.js"></script>
+  <script src="/vendors/counter-up/jquery.counterup.js"></script>
+  <script src="/js/mail-script.js"></script>
+  <script src="/js/theme.js"></script>
+    
+  </body>
+</html>
